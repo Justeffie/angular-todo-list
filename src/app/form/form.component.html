@@ -1,0 +1,7 @@
+<section>
+  <form [formGroup]="form">
+    <label for="todo"></label>
+    <input [ngClass]="todoFormControl().invalid && todoFormControl().touched ? 'invalid' : ''" id="todo" type="text" name="todo" formControlName="todo" />
+    <button class="button_form" (click)="addTodo()" [disabled]="todoFormControl().invalid">ADD</button>
+  </form>
+</section>
