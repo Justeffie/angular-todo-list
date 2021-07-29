@@ -20,6 +20,8 @@ export class FormComponent implements OnInit {
 
   addTodo(): void {
     this.todoService.addTodo(this.todoFormControl().value);
+    this.form.reset();
+    this.todoFormControl().setValue('');
   }
 
   todoFormControl(): FormControl {

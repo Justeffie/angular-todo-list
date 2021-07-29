@@ -7,7 +7,7 @@ export class TodoService {
 
   todosChanged = new Subject<Todo[]>();
   private todos: Todo[] = [];
-  private id: number = 0;
+  private id = 0;
 
   constructor() {}
 
@@ -20,6 +20,12 @@ export class TodoService {
   deleteTodo(todo: Todo) {
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
+    this.todosChanged.next(this.todos.slice());
+  }
+
+  updateTodo(todo: Todo) {
+    const index = this.todos.findIndex(td => td.id === todo.id);
+    this.todos[index].tachado = todo.tachado;
     this.todosChanged.next(this.todos.slice());
   }
 }

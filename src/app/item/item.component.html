@@ -1,8 +1,9 @@
 <li>
   <div class="item_container">
-    <p class="description">
+    <p [ngClass]="todo.tachado ? 'tachado' : ''" class="description" (click)="tachar()">
       {{ todo.action }}
     </p>
+    <fa-icon [icon]="todo.important ? solidStar : regularStar" (click)="updateImportant()"></fa-icon>
     <button class="delete" (click)="deleteTodo()">X</button>
   </div>
 </li>

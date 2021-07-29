@@ -12,6 +12,14 @@ li {
   margin: 0;
 }
 
+p {
+  cursor: pointer;
+  width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .item_container {
   width: 100%;
   height: 100%;
@@ -26,4 +34,16 @@ li {
   font-weight: bold;
   border-radius: 17px;
   cursor: pointer;
+}
+
+.tachado {
+  text-decoration: line-through;
+  text-decoration-color: deepskyblue;
+}
+
+fa-icon {
+  cursor: pointer;
+  color: #ffbe00;
+  margin-left: auto;
+  margin-right: 18px;
 }
